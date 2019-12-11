@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="icon" href="img/adapter_ico.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+    <title>Painel Desenvolvimento</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card border-success mb-3">
+            <div class="card-header bg-success text-white card-title" >
+                <h5 class="card-title text-center" style="margin-top: 0.3em;">Painel de Desenvolvimento</h5>
+                
+            </div>
+            <div id="painel">
+                
+            </div>
+        </div>
+        
+        <div id="subPainel">
+        
+        </div>
+        
+        
+        <!---
+        <section id="subPainel">
+        
+        </section>  
+            
+        <section  id="jboss" class="teste">
+            <div class="d-flex justify-content-center botoes">
+                <button type="button" class="btn btn-outline-danger btn-lg" onclick="jb1()">Jboss 1</button>
+                <button type="button" class="btn btn-outline-danger btn-lg" onclick="jb2()">Jboss 2</button>
+            </div>
+        </section>
+        <section  id="haproxy" class="haproxy1">
+            <div class="d-flex justify-content-center botoes">
+                <button type="button" class="btn btn-outline-info btn-lg" onclick="hp1()">Haproxy 1</button>
+                <button type="button" class="btn btn-outline-info btn-lg" onclick="hp2()">Haproxy 2</button>
+            </div>
+        </section>
+        ----->
+    </div>
+
+    <script type="text/javascript">        
+        
+        //Criação com JSON
+        
+        $.getJSON("js/database.json", function(data) {
+           var bands = data.bands;
+            //console.log(bands);
+            var elemento = document.querySelector('#painel');
+            var divSection = document.querySelector('#subPainel');
+            
+            
+            //Criando a section
+            var subSection = document.createElement('section');                
+
+            divSection.appendChild(subSection);
+
+            //Criando a div do sub botão
+            var divButton = document.createElement('div');
+            divButton.classList.add('d-flex');
+            divButton.classList.add('justify-content-center');
+            divButton.classList.add('botoes');
+
+
+            subSection.appendChild(divButton);
+
+            for(band of bands) {
+                
+                var teste = (band.interno.nomeBotao);
+                
+                console.log(teste);
+                
+                var internos = band.interno;
+                var nomeBotoes = "";
+                
+                
+                for (interno of internos){
+                    
+                    //Criando o sub botão
+                    var subButton = document.createElement('button');
+                    subButton.setAttribute('type', 'button');
+                    subButton.classList.add('btn');
+                    subButton.classList.add('btn-outline-info');
+                    subButton.classList.add('btn-lg');
+                    subButton.classList.add('subBotao');
+                    subButton.setAttribute('onclick', 'window.open("'+interno.linkInterno+'")');
+                    subButton.appendChild(document.createTextNode(interno.nomeBotao));
+                    subButton.setAttribute('id', interno.nomeBotao);
+                    subButton.classList.add('toggleClass');
+                    
+                    var imagemSubButton = document.createElement('img');
+                    imagemSubButton.setAttribute('src', 'img/'+band.imagem);
+                    imagemSubButton.setAttribute('alt', band.nomeBotao);
+
+                    subButton.appendChild(imagemSubButton);
+
+                    divButton.appendChild(subButton); 
+                    
+                    if(nomeBotoes == ""){
+                        nomeBotoes = interno.nomeBotao;
+                    } else {
+                        nomeBotoes = interno.nomeBotao+"#"+nomeBotoes;
+                    }
+                      
+                }
+                
+                
+                //Criando os botões
+                var buttonElement = document.createElement('button');
+                buttonElement.classList.add('btn');
+                buttonElement.classList.add('btn-outline-success');
+                buttonElement.setAttribute('onclick', band.link == "" ? "botaoClasse('"+nomeBotoes+"')" : "window.open('"+band.link+"')");
+                
+                elemento.appendChild(buttonElement);
+                
+                //Criando as imagens
+                var imagemElement = document.createElement('img');
+                imagemElement.classList.add('card-img-top');
+                imagemElement.setAttribute('src', 'img/'+band.imagem);
+                imagemElement.setAttribute('alt', band.nomeImagem);
+                
+                buttonElement.appendChild(imagemElement);
+            
+                //Criando os textos dos botões
+                var divTexto = document.createElement('div');
+                divTexto.classList.add('card-body');
+                
+                var textoElement = document.createElement('h5');
+                textoElement.classList.add('card-title');
+                textoElement.appendChild(document.createTextNode(band.nomeImagem));
+                
+                divTexto.appendChild(textoElement);
+                buttonElement.appendChild(divTexto);
+                
+                
+            }         
+            
+        });
+        
+        function botaoClasse(nomeBotoes) {
+            
+            var splitBotoes = nomeBotoes.split('#');
+            for(splitBotao of splitBotoes) {
+                subButton = document.getElementById(splitBotao);
+                subButton.classList.toggle("toggleClass");
+            }
+        }
+        
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

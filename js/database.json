@@ -1,0 +1,113 @@
+{
+    "bands": [
+        {
+            "nomeFuncao": "taiga",
+            "imagem": "favicon.png",
+            "nomeImagem": "Taiga",
+            "link": "http://taiga.adapter.net.br/project/ivan-adapter/",
+            "interno": [{
+                "nomeBotao": "",
+                "linkInterno": ""
+            }]
+        },
+        {
+            "nomeFuncao": "jenkins",
+            "imagem": "jenkins.png",
+            "nomeImagem": "Jenkins",
+            "link": "http://dev.viareal.int/jenkins/",
+            "interno": [{
+                "nomeBotao": "",
+                "linkInterno": ""
+            }]
+        },
+        {
+            "nomeFuncao": "gitlab",
+            "imagem": "gitlab.png",
+            "nomeImagem": "GitLab",
+            "link": "https://gitlab.adapter.net.br/",
+            "interno": [{
+                "nomeBotao": "",
+                "linkInterno": ""
+            }]
+        },
+        {
+            "nomeFuncao": "jboss",
+            "imagem": "jboss.png",
+            "nomeImagem": "Jboss",
+            "link": "",
+            "interno": [{
+                "nomeBotao": "jboss1",
+                "linkInterno": "http://172.16.50.209:9990/"
+            },
+            {
+                "nomeBotao": "jboss2",
+                "linkInterno": "http://192.168.50.201:9990/"
+            }                           
+            ]
+        },
+        {
+            "nomeFuncao": "relic",
+            "imagem": "new.png",
+            "nomeImagem": "New Relic",
+            "link": "https://login.newrelic.com/login",
+            "interno": [{
+                "nomeBotao": "",
+                "linkInterno": ""
+            }]
+        },
+        {
+            "nomeFuncao": "centurylink",
+            "imagem": "centurylink.png",
+            "nomeImagem": "Centurylink",
+            "link": "https://cloud.level3dc.net/",
+            "interno": [{
+                "nomeBotao": "",
+                "linkInterno": ""
+            }]
+        },
+        {
+            "nomeFuncao": "cpanel",
+            "imagem": "cp.png",
+            "nomeImagem": "CPanel",
+            "link": "https://vrt-cl-srv-web01.viareal.com.br:2083/",
+            "interno": [{
+                "nomeBotao": "",
+                "linkInterno": ""
+            }]
+        },
+        {
+            "nomeFuncao": "haproxy",
+            "imagem": "haproxy.png",
+            "nomeImagem": "Haproxy",
+            "link": "",
+            "interno": [{
+                "nomeBotao": "Haproxy1",
+                "linkInterno": "http://172.16.50.209:9000/haproxy_stats"
+            },
+            {
+                "nomeBotao": "Haproxy2",
+                "linkInterno": "http://192.168.50.201:9000/haproxy_stats"
+            }]
+        },
+        {
+            "nomeFuncao": "apache",
+            "imagem": "apache.png",
+            "nomeImagem": "Apache",
+            "link": "",
+            "interno": [{
+                "nomeBotao": "",
+                "linkInterno": ""
+            }]
+        },
+        {
+            "nomeFuncao": "aws",
+            "imagem": "aws.png",
+            "nomeImagem": "AWS",
+            "link": "https://us-east-2.signin.aws.amazon.com/oauth?SignatureVersion=4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJMOATPLHVSJ563XQ&X-Amz-Date=2019-12-02T16%3A17%3A30.164Z&X-Amz-Signature=71b6634cb43992d8332fbe0ac45331803dab1d772bb0a84d9a05e106821d865e&X-Amz-SignedHeaders=host&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&redirect_uri=https%3A%2F%2Fus-east-2.console.aws.amazon.com%2Fconsole%2Fhome%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue&response_type=code&state=hashArgs%23",
+            "interno": [{
+                "nomeBotao": "",
+                "linkInterno": ""
+            }]
+        }
+    ]
+}

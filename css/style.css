@@ -1,0 +1,55 @@
+.container {
+    margin-top: 4em;
+}
+
+.botoes {
+    margin-top: 4em;
+}
+
+.subBotao img {
+    width: 1em;
+    float: left;
+    margin-left: 1em;
+    margin-top: 0.3em;
+}
+
+.teste {
+    display: none;
+}
+
+.haproxy1 {
+    display: none;
+}
+
+.btn {
+    margin: 1em;
+    width: 10em;
+}
+
+.card {
+    display: inline-block;
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+    width: 89%;
+    margin-left: 4em;
+}
+
+.card-img-top {
+    width: 125px;
+    height: 125px;
+}
+
+.admin {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}
+
+.toggleClass {
+    display: none;
+}
+
+.subBotao {
+    margin-bottom: 3em;
+}
